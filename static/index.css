@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(49, 55, 64);
+}
+
+.element {
+    width: 65px;
+    height: 65px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    border: 1px solid black;
+}
+
+.table-1,
+.table-2 {
+    display: grid;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table-1 {
+    grid-template-columns: repeat(18, 1fr);
+    top: 37.5%;
+}
+.table-1 > .element:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 18;
+}
+.table-1 > .element:nth-child(5),
+.element:nth-child(13) {
+    grid-column-start: 13;
+}
+.table-1 > .element:nth-child(57),
+.element:nth-child(74) {
+    grid-column-start: 4;
+}
+
+.table-2 {
+    grid-template-columns: repeat(15, 1fr);
+    top: 75%;
+    transform: translate(-40%, -50%);
+}
+  
