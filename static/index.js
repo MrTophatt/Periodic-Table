@@ -30,6 +30,8 @@ window.onload = function(){
 
             const element_1 = document.querySelectorAll(".first-block");
             const element_2 = document.querySelectorAll(".second-block");
+            const liquids = [35, 80]
+            const gasses = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86]
 
             function Display(min, max, table, offset=0){
                 for(let i = min; i < max; i++) {
@@ -40,15 +42,24 @@ window.onload = function(){
                     let base = elementData[idx]
                     console.log(base)
                     table[i].innerHTML = `
-                        <span class='atomic_number'></br>${atomic_number}</span>
-                        <span class='symbol'>${base.Symbol}</span>
+                        <span class='atomic_number'>${atomic_number}</br></span>
+                        <span class='symbol'>${base.Symbol}<br></span>
+                        <span class='name'>${base.Name}</span>
                     `
-                    // table[i].innerHTML = `
-                    //     <span class='atomic_number'>${atomic_number}</br></span>
-                    //     <span class='mass'>${base.Mass}<br></span>
-                    //     <span class='symbol'>${base.Symbol}<br></span>
-                    //     <span class='name'>${base.Name}</span>
-                    // `
+                    if (liquids.includes(atomic_number)){
+                        table[i].innerHTML = `
+                            <span class='atomic_number'>${atomic_number}</span>
+                            <span class='liquid symbol'>${base.Symbol}</span>
+                            <span class='name'>${base.Name}</span>
+                        `
+                    }
+                    if (gasses.includes(atomic_number)){
+                        table[i].innerHTML = `
+                            <span class='atomic_number'>${atomic_number}</span>
+                            <span class='gas symbol'>${base.Symbol}</span>
+                            <span class='name'>${base.Name}</span>
+                        `
+                    }
                 }
             }
 
