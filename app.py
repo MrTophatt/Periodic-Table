@@ -1,8 +1,5 @@
 from flask import Flask, render_template
 from mendeleev import element
-from periodic import element
-hydrogen = element('hydrogen')
-print(hydrogen.type)
 
 elements = []
 for i in range(118):
