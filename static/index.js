@@ -36,11 +36,8 @@ window.onload = function(){
             function Display(min, max, table, offset=0){
                 for(let i = min; i < max; i++) {
                     let idx = i+offset
-                    console.log(idx, offset)
                     let atomic_number = idx+1
-                    console.log(elementData)
                     let base = elementData[idx]
-                    console.log(base)
                     table[i].innerHTML = `
                         <span class='atomic_number'>${atomic_number}</br></span>
                         <span class='symbol'>${base.Symbol}<br></span>
@@ -69,6 +66,21 @@ window.onload = function(){
             console.log(element_2)
             Display(0, 15, element_2, 56)
             Display(15, 30, element_2, 73)
+
+            function ColourCode(min, max, table, offset=0) {
+                for(let i = min; i < max; i++) {
+                    let curr = table[i]
+                    let idx = i+offset
+                    let category = elementData[idx].Category
+                    console.log(elementData[idx].Category)
+                    curr.classList.add(category.replace(/ /g,"-"))
+                }
+            }
+
+            ColourCode(0, 56, element_1)
+            ColourCode(56, 73, element_1, 15)
+            ColourCode(73, 88, element_1, 30)
+            ColourCode(0, 15, element_2, 56)
         })
         .catch(error => {
             console.error('Error fetching data:', error);

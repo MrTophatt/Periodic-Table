@@ -12,9 +12,13 @@ body {
 .navbar {
     height: 55px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
     box-shadow: 0 5px 22px #171717;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: white;
 }
 
 .element {
@@ -22,6 +26,7 @@ body {
     height: 72px;
     margin: 2px;
     background: white;
+    color: white;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -86,7 +91,33 @@ body {
 
 .table-2 {
     grid-template-columns: repeat(15, 1fr);
-    top: 75%;
-    transform: translate(-40%, -50%);
+    transform: translate(-40%, 16cm);
 }
-  
+
+.Alkali-Metal {
+    background-color: #1d4d55
+}
+.Alkaline-Earth-Metal {
+    background-color: #632e3a
+}
+.Transition-Metal {
+    background-color: #453d65
+}
+.Post-transition-Metal {
+    background-color: #2c4e46
+}
+.Metalloid {
+    background-color: #4d4317
+}
+.Nonmetal {
+    background-color: #284168;
+}
+.Noble-Gas {
+    background-color: #643a45
+}
+.Lanthanide {
+    background-color: #004f7e;
+}
+.Actinide {
+    background-color: #603b28;
+}
