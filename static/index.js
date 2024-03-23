@@ -63,7 +63,6 @@ window.onload = function(){
             Display(0, 56, element_1)
             Display(56, 73, element_1, 15)
             Display(73, 88, element_1, 30)
-            console.log(element_2)
             Display(0, 15, element_2, 56)
             Display(15, 30, element_2, 73)
 
@@ -81,6 +80,7 @@ window.onload = function(){
             ColourCode(56, 73, element_1, 15)
             ColourCode(73, 88, element_1, 30)
             ColourCode(0, 15, element_2, 56)
+            ColourCode(15, 30, element_2, 73)
         })
         .catch(error => {
             console.error('Error fetching data:', error);
