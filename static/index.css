@@ -4,21 +4,50 @@
 }
 
 body {
-    background-color: #444444;
+    background-color: #363636;
     padding: 0;
     margin: 0;
 }
 
 .navbar {
     height: 55px;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+    padding: 8px;
     box-shadow: 0 5px 22px #171717;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     color: white;
+}
+.navbar-element {
+    align-self: center;
+    margin: 0;
+}
+.navbar-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.navbar-icons {
+    display: flex;
+    grid-gap: 15px;
+    gap: 15px;
+}
+.icon-circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.icon-circle:hover {
+    transition: 0.3s;
+    transform: scale(1.12);
+}
+.github-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .element {
@@ -120,4 +149,7 @@ body {
 }
 .Actinide {
     background-color: #603b28;
+}
+.Unknown {
+    background-color: #45474c;
 }
