@@ -20,7 +20,9 @@ window.onload = function(){
             console.log(elements)
 
             elements.forEach(element => {
+                console.log(element)
                 element.onclick = () => {
+                    showModal()
                     console.log("clicked");
                 };
             });
@@ -81,6 +83,11 @@ window.onload = function(){
             ColourCode(73, 88, element_1, 30)
             ColourCode(0, 15, element_2, 56)
             ColourCode(15, 30, element_2, 73)
+
+            function showModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+            }
         })
         .catch(error => {
             console.error('Error fetching data:', error);
