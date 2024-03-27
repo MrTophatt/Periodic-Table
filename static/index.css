@@ -93,17 +93,24 @@ body {
     margin-bottom: 5px;
 }
 
+.wrapper {
+    margin-top: 60px; /* Adjust this value to change the distance */
+    padding: 20px;
+    position: relative;
+}
+
 .table-1,
 .table-2 {
+    margin-top: 15px; /* Adjust this value to change the distance */
+    width: auto;
     display: grid;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .table-1 {
     grid-template-columns: repeat(18, 1fr);
-    top: 37.5%;
 }
 .table-1 > .element:nth-child(1) {
     grid-column-start: 1;
@@ -120,7 +127,10 @@ body {
 
 .table-2 {
     grid-template-columns: repeat(15, 1fr);
-    transform: translate(-40%, 16cm);
+    padding: 0;
+    margin-top: 600px; /* Adjust this value to change the distance */
+    position: absolute;
+    transform: translateX(-40%);
 }
 
 .Alkali-Metal {
@@ -152,4 +162,23 @@ body {
 }
 .Unknown {
     background-color: #45474c;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
 }
