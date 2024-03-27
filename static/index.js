@@ -1,33 +1,31 @@
 window.onload = function(){
-    const table_1 = document.querySelector(".table-1");
-    console.log(table_1)
-    const table_2 = document.querySelector(".table-2");
-    let elementData;
-
     fetch('/get_data')
         .then(response => response.json())
         .then(data => {
-            elementData = data; // Do something with the retrieved data
+            let elementData = data; // Do something with the retrieved data
+
+            const table_1 = document.querySelector(".table-1");
+            const table_2 = document.querySelector(".table-2");
 
             function GenerateGrids(amount, className, table) {
-            for (let i = 0; i < amount; i++) {
-                let element = document.createElement("div");
-                element.className = className;
-                table.appendChild(element);
+                for (let i = 0; i < amount; i++) {
+                    let element = document.createElement("div");
+                    element.className = className;
+                    table.appendChild(element);
+                }
             }
-            }
-            let elements = document.querySelectorAll("element");
-            console.log(elements)
-
-            elements.forEach(element => {
-                element.onclick = () => {
-                    showModal()
-                    console.log("clicked");
-                };
-            });
 
             GenerateGrids(88, "element first-block", table_1);
             GenerateGrids(30, 'element second-block', table_2);
+
+            let elements = document.querySelectorAll(".element")
+
+            elements.forEach(element => {
+                element.onclick = function(){
+                    showModal()
+                    console.log("clicked")
+                }
+            });
 
             const element_1 = document.querySelectorAll(".first-block");
             const element_2 = document.querySelectorAll(".second-block");
@@ -72,7 +70,6 @@ window.onload = function(){
                     let curr = table[i]
                     let idx = i+offset
                     let category = elementData[idx].Category
-                    console.log(elementData[idx].Category)
                     curr.classList.add(category.replace(/ /g,"-"))
                 }
             }
@@ -87,6 +84,16 @@ window.onload = function(){
                 var modal = document.getElementById("myModal");
                 modal.style.display = "block";
             }
+            function hideModal() {
+                var modal = document.getElementById("myModal");
+
+                window.addEventListener("click", function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            }
+            hideModal()
         })
         .catch(error => {
             console.error('Error fetching data:', error);
