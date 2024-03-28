@@ -20,12 +20,22 @@ window.onload = function(){
 
             let elements = document.querySelectorAll(".element")
 
-            elements.forEach(element => {
-                element.onclick = function(){
-                    showModal()
-                    console.log("clicked")
-                }
-            });
+            function ClickedElement(elements) {
+                elements.forEach(element => {
+                    element.onclick = function(){
+                        console.log(element)
+                        showModal(parseInt(element.querySelector(".atomic_number").innerHTML))
+                    }
+                });
+            }
+            ClickedElement(elements)
+
+            let search = document.querySelector(".search-icon")
+
+            search.onclick = function(){
+                hideModal()
+                showModal("search")
+            }
 
             const element_1 = document.querySelectorAll(".first-block");
             const element_2 = document.querySelectorAll(".second-block");
@@ -38,7 +48,7 @@ window.onload = function(){
                     let atomic_number = idx+1
                     let base = elementData[idx]
                     table[i].innerHTML = `
-                        <span class='atomic_number'>${atomic_number}</br></span>
+                        <span class='atomic_number'>${atomic_number}</span>
                         <span class='symbol'>${base.Symbol}<br></span>
                         <span class='name'>${base.Name}</span>
                     `
@@ -80,9 +90,34 @@ window.onload = function(){
             ColourCode(0, 15, element_2, 56)
             ColourCode(15, 30, element_2, 73)
 
-            function showModal() {
+            function showModal(element) {
                 var modal = document.getElementById("myModal");
+                const ModalContent = modal.querySelector(".modal-content")
                 modal.style.display = "block";
+
+                if(element=="search"){
+                    ModalContent.querySelector(".Title").innerHTML = "SEARCH";
+                    ModalContent.querySelector("#searchInput").style.display = 'block'
+                    ModalContent.querySelector("#searchInput").innerHTML = ''
+                    const element_block = ModalContent.querySelector(".basic-info")
+                    element_block.innerHTML = ""
+                    for(i=0; i<elementData.length; i++) {
+                        element_block.innerHTML = element_block.innerHTML + `
+                            <div class="element ${elementData[i].Category.replace(/ /g,"-")}">
+                                <span class='atomic_number'>${i+1}</span>
+                                <span class='symbol'>${elementData[i].Symbol}<br></span>
+                                <span class='name'>${elementData[i].Name}</span>
+                            </div>
+                        `
+                    }
+                    let elements = element_block.querySelectorAll(".element")
+                    ClickedElement(elements)
+
+                } else {
+                    ModalContent.querySelector("#searchInput").style.display = 'none'
+                    ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
+                    ModalContent.querySelector(".basic-info").innerHTML = elementData[element-1].Symbol
+                }
             }
             function hideModal() {
                 var modal = document.getElementById("myModal");
@@ -94,6 +129,21 @@ window.onload = function(){
                 });
             }
             hideModal()
+
+            document.getElementById('searchInput').addEventListener('input', function (event) {
+                const searchTerm = event.target.value.toLowerCase();
+                const listItems=document.querySelector(".modal-content").querySelectorAll('.element')
+            
+                listItems.forEach(function (item) {
+                    const itemText = item.textContent.toLowerCase();
+            
+                    if (itemText.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         })
         .catch(error => {
             console.error('Error fetching data:', error);

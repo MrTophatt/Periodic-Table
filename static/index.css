@@ -41,16 +41,20 @@ body {
     display: grid;
     place-items: center;
 }
+.clear {
+    background-color: transparent;
+}
 .icon-circle:hover {
     transition: 0.3s;
     transform: scale(1.12);
+    cursor: pointer;
 }
-.github-icon {
+.github-icon, .search-icon {
     width: 24px;
     height: 24px;
 }
 
-.element {
+.element, .mini-element {
     width: 72px;
     height: 72px;
     margin: 2px;
@@ -93,10 +97,12 @@ body {
     margin-bottom: 5px;
 }
 
-.wrapper {
-    margin-top: 60px; /* Adjust this value to change the distance */
-    padding: 20px;
-    position: relative;
+#wrapper{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
 }
 
 .table-1,
@@ -176,9 +182,8 @@ body {
     height: 100%;
     overflow-y: auto;
 }
-
 .modal-content {
-    background-color: white;
+    background-color: gray;
     padding: 20px;
     border-radius: 10px;
     width: 40%;
@@ -186,3 +191,9 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.modal-content input[type=text] {
+    padding: 6px;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+  }

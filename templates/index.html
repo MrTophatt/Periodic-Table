@@ -12,7 +12,11 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-element navbar-search"></div>
+        <div class="navbar-element navbar-search">
+            <div class="icon-circle clear">
+                <img src="../static/media/searching-magnifying-glass.png" alt="Search" class="search-icon">
+            </div>
+        </div>
         <div class="navbar-element navbar-title">Periodic Table</div>
         <div class="navbar-element navbar-icons">
             <a href="https://github.com/MrTophatt">
@@ -28,9 +32,9 @@
     </div>
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <h2>Modal Content</h2>
-            <p>This is a modal with a scrollable content area.</p>
-            <!-- Your scrollable content here -->
+            <h2 class="Title"></h2>
+            <input id="searchInput" type="text" placeholder="Search..">
+            <p class="basic-info"></p>
         </div>
     </div>
     <script src="../static/index.js"></script>
