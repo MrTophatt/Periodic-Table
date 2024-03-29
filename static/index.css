@@ -100,7 +100,7 @@ body {
 #wrapper{
     position: absolute;
     width:100%;
-    height: 100%;
+    height: auto;
     display:flex;
     flex-direction: column;
 }
@@ -191,9 +191,19 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.basic-info {
+    margin: 0;
+    margin-bottom: 10px;
+}
 .modal-content input[type=text] {
     padding: 6px;
+    margin-bottom: 20px;
     width: 100%;
     border: none;
+    border-radius: 5px;
     font-size: 17px;
-  }
+}
+.search-container {
+    overflow-y: auto;
+    max-height: 85vh;
+}

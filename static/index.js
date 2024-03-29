@@ -91,14 +91,14 @@ window.onload = function(){
             ColourCode(15, 30, element_2, 73)
 
             function showModal(element) {
-                var modal = document.getElementById("myModal");
+                const modal = document.getElementById("myModal");
                 const ModalContent = modal.querySelector(".modal-content")
                 modal.style.display = "block";
 
                 if(element=="search"){
-                    ModalContent.querySelector(".Title").innerHTML = "SEARCH";
-                    ModalContent.querySelector("#searchInput").style.display = 'block'
-                    ModalContent.querySelector("#searchInput").innerHTML = ''
+                    ModalContent.querySelector(".Title").style.display = 'none'
+                    modal.querySelector("#searchInput").style.display = 'block'
+                    modal.querySelector("#searchInput").innerHTML = ''
                     const element_block = ModalContent.querySelector(".basic-info")
                     element_block.innerHTML = ""
                     for(i=0; i<elementData.length; i++) {
@@ -114,6 +114,7 @@ window.onload = function(){
                     ClickedElement(elements)
 
                 } else {
+                    ModalContent.querySelector(".Title").style.display = 'block'
                     ModalContent.querySelector("#searchInput").style.display = 'none'
                     ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
                     ModalContent.querySelector(".basic-info").innerHTML = elementData[element-1].Symbol
