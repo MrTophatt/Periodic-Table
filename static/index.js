@@ -93,7 +93,7 @@ window.onload = function(){
             function showModal(element) {
                 const modal = document.getElementById("myModal");
                 const ModalContent = modal.querySelector(".modal-content")
-                modal.style.display = "block";
+                modal.style.display = "flex";
 
                 if(element=="search"){
                     ModalContent.querySelector(".Title").style.display = 'none'
