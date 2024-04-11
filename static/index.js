@@ -3,6 +3,7 @@ window.onload = function(){
         .then(response => response.json())
         .then(data => {
             let elementData = data; // Do something with the retrieved data
+            let currElementNumber = 0;
 
             const table_1 = document.querySelector(".table-1");
             const table_2 = document.querySelector(".table-2");
@@ -23,8 +24,9 @@ window.onload = function(){
             function ClickedElement(elements) {
                 elements.forEach(element => {
                     element.onclick = function(){
-                        console.log(element)
-                        showModal(parseInt(element.querySelector(".atomic_number").innerHTML))
+                        currElementNumber = parseInt(element.querySelector(".atomic_number").innerHTML)
+                        console.log(currElementNumber)
+                        showModal(currElementNumber)
                     }
                 });
             }
@@ -145,6 +147,32 @@ window.onload = function(){
                     }
                 });
             });
+
+            function ArrowsClicked() {
+                var leftArrow = document.querySelector(".left-arrow");
+                var rightArrow = document.querySelector(".right-arrow");
+
+                window.addEventListener("click", function(event) {
+                    if (event.target === leftArrow) {
+                        currElementNumber--
+                        if (currElementNumber < 1){
+                            currElementNumber = 118
+                        }
+                        console.log(currElementNumber)
+                        showModal(currElementNumber)
+                    }
+
+                    if (event.target === rightArrow) {
+                        currElementNumber++
+                        if (currElementNumber > 118){
+                            currElementNumber = 1
+                        }
+                        console.log(currElementNumber)
+                        showModal(currElementNumber)
+                    }
+                });
+            }
+            ArrowsClicked()
         })
         .catch(error => {
             console.error('Error fetching data:', error);
