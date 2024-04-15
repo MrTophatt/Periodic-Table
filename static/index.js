@@ -101,6 +101,7 @@ window.onload = function(){
                     ModalContent.querySelector(".Title").style.display = 'none'
                     modal.querySelector("#searchInput").style.display = 'block'
                     modal.querySelector("#searchInput").innerHTML = ''
+                    modal.querySelector(".search-container").style.height = '83vh'
                     const element_block = ModalContent.querySelector(".basic-info")
                     element_block.innerHTML = ""
                     for(i=0; i<elementData.length; i++) {
@@ -118,8 +119,23 @@ window.onload = function(){
                 } else {
                     ModalContent.querySelector(".Title").style.display = 'block'
                     ModalContent.querySelector("#searchInput").style.display = 'none'
+                    modal.querySelector(".search-container").style.height = '90vh'
                     ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
-                    ModalContent.querySelector(".basic-info").innerHTML = elementData[element-1].Symbol
+                    ModalContent.querySelector(".basic-info").innerHTML = `
+                    ${elementData[element-1].Symbol} <br><br>
+                    -- Origin of Name -- <br>
+                    ${elementData[element-1].OriginName} <br><br>
+                    -- Description -- <br>
+                    ${elementData[element-1].Description} <br><br>
+                    -- Sources -- <br>
+                    ${elementData[element-1].Sources} <br><br>
+                    -- Uses -- <br>
+                    ${elementData[element-1].Uses} <br><br>
+                    -- Discovery -- <br>
+                    People: ${elementData[element-1].Discovery.People} <br>
+                    Location: ${elementData[element-1].Discovery.Location} <br>
+                    Year: ${elementData[element-1].Discovery.Year} <br><br>
+                    `
                 }
             }
             function hideModal() {

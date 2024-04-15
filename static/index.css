@@ -207,6 +207,7 @@ body {
 .search-container {
     overflow-y: auto;
     height: 83vh;
+    padding-right:20px;
 }
 
 .arrow {

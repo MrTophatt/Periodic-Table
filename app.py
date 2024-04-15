@@ -128,10 +128,19 @@ for i in range(118):
     el = element(i+1)
     elements.append({
         "Name": el.name,
+        "OriginName": el.name_origin,
         "AtomicNumber": el.atomic_number,
         "Symbol": el.symbol,
         "Mass": el.atomic_weight,
-        "Category": element_categories[i]
+        "Category": element_categories[i],
+        "Description": el.description,
+        "Uses": el.uses,
+        "Discovery": {
+            "People": el.discoverers,
+            "Location": el.discovery_location,
+            "Year": el.discovery_year
+        },
+        "Sources": el.sources
     })
 
 print(elements)
