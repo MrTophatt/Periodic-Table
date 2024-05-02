@@ -1,5 +1,11 @@
 from flask import Flask, render_template
 from mendeleev import element
+from math import lcm
+from chempy import Substance, balance_stoichiometry
+
+ferricyanide = Substance.from_formula('Fe(NO3)2')
+print([dict(_) for _ in balance_stoichiometry({'C', 'O2'}, {'CO2', 'CO'}, underdetermined=None)])
+print(ferricyanide.unicode_name)
 
 element_categories = [
     "Nonmetal",  # Hydrogen
@@ -142,8 +148,6 @@ for i in range(118):
         },
         "Sources": el.sources
     })
-
-print(elements)
 
 app = Flask(__name__)
 

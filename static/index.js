@@ -99,8 +99,10 @@ window.onload = function(){
 
                 if(element=="search"){
                     ModalContent.querySelector(".Title").style.display = 'none'
+                    document.querySelector(".left-arrow").style.display = 'none'
+                    document.querySelector(".right-arrow").style.display = 'none'
                     modal.querySelector("#searchInput").style.display = 'block'
-                    modal.querySelector("#searchInput").innerHTML = ''
+                    modal.querySelector("#searchInput").value = ""
                     modal.querySelector(".search-container").style.height = '83vh'
                     const element_block = ModalContent.querySelector(".basic-info")
                     element_block.innerHTML = ""
@@ -118,6 +120,8 @@ window.onload = function(){
 
                 } else {
                     ModalContent.querySelector(".Title").style.display = 'block'
+                    document.querySelector(".left-arrow").style.display = ''
+                    document.querySelector(".right-arrow").style.display = ''
                     ModalContent.querySelector("#searchInput").style.display = 'none'
                     modal.querySelector(".search-container").style.height = '90vh'
                     ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
@@ -148,47 +152,6 @@ window.onload = function(){
                 });
             }
             hideModal()
-
-            document.getElementById('searchInput').addEventListener('input', function (event) {
-                const searchTerm = event.target.value.toLowerCase();
-                const listItems=document.querySelector(".modal-content").querySelectorAll('.element')
-            
-                listItems.forEach(function (item) {
-                    const itemText = item.textContent.toLowerCase();
-            
-                    if (itemText.includes(searchTerm)) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-
-            function ArrowsClicked() {
-                var leftArrow = document.querySelector(".left-arrow");
-                var rightArrow = document.querySelector(".right-arrow");
-
-                window.addEventListener("click", function(event) {
-                    if (event.target === leftArrow) {
-                        currElementNumber--
-                        if (currElementNumber < 1){
-                            currElementNumber = 118
-                        }
-                        console.log(currElementNumber)
-                        showModal(currElementNumber)
-                    }
-
-                    if (event.target === rightArrow) {
-                        currElementNumber++
-                        if (currElementNumber > 118){
-                            currElementNumber = 1
-                        }
-                        console.log(currElementNumber)
-                        showModal(currElementNumber)
-                    }
-                });
-            }
-            ArrowsClicked()
         })
         .catch(error => {
             console.error('Error fetching data:', error);
