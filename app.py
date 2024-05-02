@@ -116,10 +116,10 @@ element_categories = [
     "Transition Metal",  # Seaborgium
     "Transition Metal",  # Bohrium
     "Transition Metal",  # Hassium
-    "Transition Metal",  # Meitnerium
-    "Transition Metal",  # Darmstadtium
-    "Transition Metal",  # Roentgenium
-    "Transition Metal",  # Copernicium
+    "Unknown",  # Meitnerium
+    "Unknown",  # Darmstadtium
+    "Unknown",  # Roentgenium
+    "Unknown",  # Copernicium
     "Unknown",  # Nihonium
     "Unknown",  # Flerovium
     "Unknown",  # Moscovium

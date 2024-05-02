@@ -3,8 +3,6 @@ window.onload = function(){
         .then(response => response.json())
         .then(data => {
             let elementData = data; // Do something with the retrieved data
-            let currElementNumber = 0;
-
             const table_1 = document.querySelector(".table-1");
             const table_2 = document.querySelector(".table-2");
 
@@ -20,24 +18,7 @@ window.onload = function(){
             GenerateGrids(30, 'element second-block', table_2);
 
             let elements = document.querySelectorAll(".element")
-
-            function ClickedElement(elements) {
-                elements.forEach(element => {
-                    element.onclick = function(){
-                        currElementNumber = parseInt(element.querySelector(".atomic_number").innerHTML)
-                        console.log(currElementNumber)
-                        showModal(currElementNumber)
-                    }
-                });
-            }
             ClickedElement(elements)
-
-            let search = document.querySelector(".search-icon")
-
-            search.onclick = function(){
-                hideModal()
-                showModal("search")
-            }
 
             const element_1 = document.querySelectorAll(".first-block");
             const element_2 = document.querySelectorAll(".second-block");
@@ -92,68 +73,33 @@ window.onload = function(){
             ColourCode(0, 15, element_2, 56)
             ColourCode(15, 30, element_2, 73)
 
-            function showModal(element) {
-                const modal = document.getElementById("myModal");
-                const ModalContent = modal.querySelector(".modal-content")
-                modal.style.display = "flex";
-
-                if(element=="search"){
-                    ModalContent.querySelector(".Title").style.display = 'none'
-                    document.querySelector(".left-arrow").style.display = 'none'
-                    document.querySelector(".right-arrow").style.display = 'none'
-                    modal.querySelector("#searchInput").style.display = 'block'
-                    modal.querySelector("#searchInput").value = ""
-                    modal.querySelector(".search-container").style.height = '83vh'
-                    const element_block = ModalContent.querySelector(".basic-info")
-                    element_block.innerHTML = ""
-                    for(i=0; i<elementData.length; i++) {
-                        element_block.innerHTML = element_block.innerHTML + `
-                            <div class="element ${elementData[i].Category.replace(/ /g,"-")}">
-                                <span class='atomic_number'>${i+1}</span>
-                                <span class='symbol'>${elementData[i].Symbol}<br></span>
-                                <span class='name'>${elementData[i].Name}</span>
-                            </div>
-                        `
-                    }
-                    let elements = element_block.querySelectorAll(".element")
-                    ClickedElement(elements)
-
-                } else {
-                    ModalContent.querySelector(".Title").style.display = 'block'
-                    document.querySelector(".left-arrow").style.display = ''
-                    document.querySelector(".right-arrow").style.display = ''
-                    ModalContent.querySelector("#searchInput").style.display = 'none'
-                    modal.querySelector(".search-container").style.height = '90vh'
-                    ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
-                    ModalContent.querySelector(".basic-info").innerHTML = `
-                    ${elementData[element-1].Symbol} <br><br>
-                    -- Origin of Name -- <br>
-                    ${elementData[element-1].OriginName} <br><br>
-                    -- Description -- <br>
-                    ${elementData[element-1].Description} <br><br>
-                    -- Sources -- <br>
-                    ${elementData[element-1].Sources} <br><br>
-                    -- Uses -- <br>
-                    ${elementData[element-1].Uses} <br><br>
-                    -- Discovery -- <br>
-                    People: ${elementData[element-1].Discovery.People} <br>
-                    Location: ${elementData[element-1].Discovery.Location} <br>
-                    Year: ${elementData[element-1].Discovery.Year} <br><br>
+            function PreloadSearchMap() {
+                const elementMap = elementData.map((x, i) => {
+                    return`
+                    <div class="element ${elementData[i].Category.replace(/ /g,"-")}">
+                        <span class='atomic_number'>${i+1}</span>
+                        <span class='symbol'>${elementData[i].Symbol}<br></span>
+                        <span class='name'>${elementData[i].Name}</span>
+                    </div>
                     `
-                }
+                }).toString().replaceAll(',','');
+                window.exports = {elementData, elementMap};
+                console.log(elementMap)
             }
-            function hideModal() {
-                var modal = document.getElementById("myModal");
-
-                window.addEventListener("click", function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                });
-            }
-            hideModal()
+            PreloadSearchMap()
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+}
+
+var currElementNumber = 0;
+function ClickedElement(elements) {
+    elements.forEach(element => {
+        element.onclick = function(){
+            currElementNumber = parseInt(element.querySelector(".atomic_number").innerHTML)
+            console.log(currElementNumber)
+            showModal(currElementNumber)
+        }
+    });
 }
