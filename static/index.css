@@ -192,6 +192,9 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height:inherit;
+    overflow: hidden;
+    position: relative;
 }
 .basic-info {
     margin: 0;
@@ -206,8 +209,9 @@ body {
     font-size: 17px;
 }
 .search-container {
-    overflow-y: auto;
+    overflow-y:auto;
     padding-right:20px;
+    max-height: 93%;
 }
 
 .arrow {

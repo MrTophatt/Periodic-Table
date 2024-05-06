@@ -11,7 +11,6 @@ function showModal(element) {
         document.querySelector(".right-arrow").style.display = 'none'
         modal.querySelector("#searchInput").style.display = 'block'
         modal.querySelector("#searchInput").value = ""
-        modal.querySelector(".search-container").style.height = '83vh'
         const element_block = ModalContent.querySelector(".basic-info")
         element_block.innerHTML = elementMap
         let elements = element_block.querySelectorAll(".element")
@@ -22,7 +21,6 @@ function showModal(element) {
         document.querySelector(".left-arrow").style.display = ''
         document.querySelector(".right-arrow").style.display = ''
         ModalContent.querySelector("#searchInput").style.display = 'none'
-        modal.querySelector(".search-container").style.height = '90vh'
         ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
         ModalContent.querySelector(".basic-info").innerHTML = `
         ${elementData[element-1].Symbol} <br><br>
