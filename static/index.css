@@ -57,7 +57,7 @@ body {
 .element {
     width: 72px;
     height: 72px;
-    margin: 2px;
+    margin: 1px;
     background: white;
     color: white;
     display: flex;
@@ -74,15 +74,23 @@ body {
     transform: scale(1.12);
 }
 
+.element:empty {
+    cursor:default;
+    transform:none;
+    background-color: #363636;
+    height: 45px;
+    max-height: 45px;
+}
+
 .symbol {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 33px;
 }
-.liquid {
+.Liquid {
     color: blue;
 }
-.gas {
+.Gas {
     color: red;
 }
 .atomic_number {
@@ -106,8 +114,8 @@ body {
     flex-direction: column;
 }
 
-.table-1,
-.table-2 {
+.table-1 {
+    grid-template-columns: repeat(18, 1fr);
     margin-top: 15px; /* Adjust this value to change the distance */
     width: auto;
     display: grid;
@@ -115,29 +123,19 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
-.table-1 {
-    grid-template-columns: repeat(18, 1fr);
-}
-.table-1 > .element:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 18;
+.table-1 > .element:nth-child(2) {
+    grid-column-start: 18;
 }
 .table-1 > .element:nth-child(5),
 .element:nth-child(13) {
     grid-column-start: 13;
 }
 .table-1 > .element:nth-child(57),
-.element:nth-child(74) {
+.element:nth-child(74),
+.element:nth-child(89),
+.element:nth-child(104),
+.element:nth-child(119) {
     grid-column-start: 4;
-}
-
-.table-2 {
-    grid-template-columns: repeat(15, 1fr);
-    padding: 0;
-    margin-top: 600px; /* Adjust this value to change the distance */
-    position: absolute;
-    transform: translateX(-40%);
 }
 
 .Alkali-Metal {
@@ -189,7 +187,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 40%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     height:inherit;
@@ -211,7 +210,7 @@ body {
 .search-container {
     overflow-y:auto;
     padding-right:20px;
-    max-height: 93%;
+    height: 100%;
 }
 
 .arrow {

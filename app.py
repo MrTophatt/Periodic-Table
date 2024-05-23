@@ -128,15 +128,24 @@ element_categories = [
     "Unknown",  # Oganesson
 ]
 
+liquids = [35, 80]
+gasses = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86]
 
 elements = []
 for i in range(118):
     el = element(i+1)
+    if i+1 in liquids:
+        state = "Liquid"
+    elif i+1 in gasses:
+        state = "Gas"
+    else:
+        state = "Solid"
     elements.append({
         "Name": el.name,
         "OriginName": el.name_origin,
         "AtomicNumber": el.atomic_number,
         "Symbol": el.symbol,
+        "StateOfMatter": state,
         "Mass": el.atomic_weight,
         "Category": element_categories[i],
         "Description": el.description,

@@ -1,6 +1,5 @@
 function showModal(element) {
     const elementData = window.exports["elementData"]
-    const elementMap = window.exports["elementMap"]
     const modal = document.getElementById("myModal");
     const ModalContent = modal.querySelector(".modal-content")
     modal.style.display = "flex";
@@ -12,7 +11,8 @@ function showModal(element) {
         modal.querySelector("#searchInput").style.display = 'block'
         modal.querySelector("#searchInput").value = ""
         const element_block = ModalContent.querySelector(".basic-info")
-        element_block.innerHTML = elementMap
+
+        element_block.innerHTML = GenerateElementList([], []) // Filter
         let elements = element_block.querySelectorAll(".element")
         ClickedElement(elements)
 
@@ -38,6 +38,22 @@ function showModal(element) {
         Year: ${elementData[element-1].Discovery.Year} <br><br>
         `
     }
+}
+
+function GenerateElementList(stateOfMatter="", category=[]) {
+    const El = window.exports["El"]
+
+    const Filtered = El.filter(stateOfMatter, category)
+    console.log(Filtered)
+    return Filtered.map((x) => {
+        return`
+        <div class="element ${x.Category.replace(/ /g,"-")}">
+            <span class='atomic_number'>${x.AtomicNumber}</span>
+            <span class='${x.StateOfMatter} symbol'>${x.Symbol}<br></span>
+            <span class='name'>${x.Name}</span>
+        </div>
+        `
+    }).toString().replaceAll(',','');
 }
 
 function hideModal() {
