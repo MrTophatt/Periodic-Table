@@ -109,14 +109,14 @@ body {
 #wrapper{
     position: absolute;
     width:100%;
-    height: auto;
+    height: calc(100vh - 55px);
     display:flex;
     flex-direction: column;
 }
 
 .table-1 {
     grid-template-columns: repeat(18, 1fr);
-    margin-top: 15px; /* Adjust this value to change the distance */
+    margin-top: 6vh; /* Adjust this value to change the distance */
     width: auto;
     display: grid;
     position: absolute;
@@ -195,7 +195,12 @@ body {
     overflow: hidden;
     position: relative;
 }
+.Title {
+    color: white;
+    text-align: center;
+}
 .basic-info {
+    color: white;
     margin: 0;
     margin-bottom: 10px;
 }

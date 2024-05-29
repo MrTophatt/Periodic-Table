@@ -33,7 +33,7 @@ function showModal(element) {
         -- Uses -- <br>
         ${elementData[element-1].Uses} <br><br>
         -- Discovery -- <br>
-        People: ${elementData[element-1].Discovery.People} <br>
+        Discoverer: ${elementData[element-1].Discovery.People} <br>
         Location: ${elementData[element-1].Discovery.Location} <br>
         Year: ${elementData[element-1].Discovery.Year} <br><br>
         `
