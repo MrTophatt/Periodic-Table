@@ -40,7 +40,7 @@ function showModal(element) {
     }
 }
 
-function GenerateElementList(stateOfMatter="", category=[]) {
+function GenerateElementList(stateOfMatter=[], category=[]) {
     const El = window.exports["El"]
 
     const Filtered = El.filter(stateOfMatter, category)

@@ -8,28 +8,25 @@ window.onload = function(){
 
             for (let i = 0; i < 133; i++) { // Generate the table grid
                 let element = document.createElement("div");
-                element.className = "element block";
+                element.className = "element";
                 table_1.appendChild(element);
             }
 
-            let elements = document.querySelectorAll(".element")
+            const elements = document.querySelectorAll(".element")
             ClickedElement(elements)
-
-            const element_1 = document.querySelectorAll(".block");
 
             function Display(min, max, offset=0){
                 for(let i = min; i < max; i++) {
                     let idx = i+offset
                     let atomic_number = idx+1
                     let base = elementData[idx]
-                    let curr = element_1[i]
-                    let category = elementData[idx].Category
+                    let curr = elements[i]
                     curr.innerHTML = `
                         <span class='atomic_number'>${atomic_number}</span>
                         <span class="${elementData[idx].StateOfMatter} symbol">${base.Symbol}<br></span>
                         <span class='name'>${base.Name}</span>
                     `
-                    curr.classList.add(category.replace(/ /g,"-"))
+                    curr.classList.add(elementData[idx].Category.replace(/ /g,"-"))
                 }
             }
 
@@ -42,7 +39,7 @@ window.onload = function(){
             function PreloadSearchMap() {
                 const elementMap = elementData.map((x, i) => {
                     return`
-                    <div class="element ${elementData[i].Category.replace(/ /g,"-")}">
+                    <div class="element ${elementData[i].Category.replace(/ /g,"-")} block-${elementData[i].Block}">
                         <span class='atomic_number'>${i+1}</span>
                         <span class='${elementData[i].StateOfMatter} symbol'>${elementData[i].Symbol}<br></span>
                         <span class='name'>${elementData[i].Name}</span>

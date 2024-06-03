@@ -27,6 +27,7 @@ body {
 .navbar-title {
     font-weight: 700;
     letter-spacing: 1px;
+    text-align: center;
 }
 .navbar-icons {
     display: flex;
@@ -52,6 +53,70 @@ body {
 .github-icon, .search-icon {
     width: 24px;
     height: 24px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 25px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: flex-start;
+}
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-left, .navbar-right, .navbar-title {
+    flex-basis: 100%;
 }
 
 .element {
@@ -167,6 +232,22 @@ body {
 }
 .Unknown {
     background-color: #45474c;
+}
+
+.block-s {
+    background-color: #B1CAE8;
+}
+.block-p {
+    background-color: #8DC872;
+}
+.block-d {
+    background-color: #EDEA4C;
+}
+.block-f {
+    background-color: #EFB83A;
+}
+.block-d, .block-f, .block-p, .block-s {
+    color: rgb(43, 43, 43)
 }
 
 .modal {

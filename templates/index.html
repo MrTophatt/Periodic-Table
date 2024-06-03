@@ -12,18 +12,28 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-element navbar-search">
-            <div class="icon-circle clear">
-                <img src="../static/media/searching-magnifying-glass.png" alt="Search" class="search-icon">
-            </div>
-        </div>
-        <div class="navbar-element navbar-title">Periodic Table</div>
-        <div class="navbar-element navbar-icons">
-            <a href="https://github.com/MrTophatt">
-                <div class="icon-circle">
-                    <img src="../static/media/github.png" alt="Github" class="github-icon">
+        <div class="navbar-left">
+            <div class="navbar-element navbar-search">
+                <div class="icon-circle clear">
+                    <img src="../static/media/searching-magnifying-glass.png" alt="Search" class="search-icon">
                 </div>
-            </a>
+            </div>
+            <label class="navbar-element switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="navbar-element navbar-title">Periodic Table</div>
+
+        <div class="navbar-right">
+            <div class="navbar-element navbar-icons">
+                <a href="https://github.com/MrTophatt">
+                    <div class="icon-circle">
+                        <img src="../static/media/github.png" alt="Github" class="github-icon">
+                    </div>
+                </a>
+            </div>
         </div>
     </nav>
     <div id="wrapper">
@@ -49,5 +59,6 @@
     <script type="text/javascript" src="../static/arrows.js"></script>
     <script type="text/javascript" src="../static/modals.js"></script>
     <script type="text/javascript" src="../static/element.js"></script>
+    <script type="text/javascript" src="../static/table colours switch.js"></script>
 </body>
 </html>
