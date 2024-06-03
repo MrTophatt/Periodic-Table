@@ -148,6 +148,7 @@ for i in range(118):
         "StateOfMatter": state,
         "Mass": el.atomic_weight,
         "Category": element_categories[i],
+        "Block": el.block,
         "Description": el.description,
         "Uses": el.uses,
         "Discovery": {

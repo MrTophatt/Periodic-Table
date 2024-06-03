@@ -9,7 +9,7 @@ class Elements {
         }
         else if (typeof x === "string"){
             return this.data.find(element => {
-                element.Symbol === x
+                element.Symbol === x || element.Name === x
             })
         }
     }
