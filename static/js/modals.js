@@ -40,14 +40,13 @@ function showModal(element) {
     }
 }
 
-function GenerateElementList(stateOfMatter=[], category=[]) {
+function GenerateElementList(stateOfMatter=[], category=[], manmade=null) {
     const El = window.exports["El"]
 
-    const Filtered = El.filter(stateOfMatter, category)
-    console.log(Filtered)
+    const Filtered = El.filter(stateOfMatter, category, manmade)
     return Filtered.map((x) => {
         return`
-        <div class="element ${x.Category.replace(/ /g,"-")}">
+        <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"}">
             <span class='atomic_number'>${x.AtomicNumber}</span>
             <span class='${x.StateOfMatter} symbol'>${x.Symbol}<br></span>
             <span class='name'>${x.Name}</span>

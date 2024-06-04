@@ -128,6 +128,38 @@ element_categories = [
     "Unknown",  # Oganesson
 ]
 
+man_made_atomic_numbers = [
+    43,  # Technetium
+    61,  # Promethium
+    85,  # Astatine
+    93,  # Neptunium
+    94,  # Plutonium
+    95,  # Americium 
+    96,  # Curium
+    97,  # Berkelium
+    98,  # Californium
+    99,  # Einsteinium
+    100, # Fermiun
+    101, # Mendelevium
+    102, # Nobelium
+    103, # Lawrencium
+    104, # Rutherfordium
+    105, # Dubium
+    106, # Seaborgium
+    107, # Bohrium
+    108, # Hassium
+    109, # Meitnerium
+    110, # Darmstadium
+    111, # Roentgenium
+    112, # Copernicium
+    113, # Nihonium
+    114, # Flerovium
+    115, # Moscovium
+    116, # Livermorium
+    117, # Tennessine
+    118  # Organesson
+]
+
 liquids = [35, 80]
 gasses = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86]
 
@@ -156,6 +188,7 @@ for i in range(118):
             "Location": el.discovery_location,
             "Year": el.discovery_year
         },
+        "ManMade": True if i+1 in man_made_atomic_numbers else False,
         "Sources": el.sources
     })
 
