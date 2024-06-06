@@ -27,13 +27,13 @@ function showModal(element) {
         title.style.display = 'block'
         console.log(title)
         title_name.innerHTML = elementData[element-1].Name
-        title_num_symbol.innerHTML = elementData[element-1].Symbol
+        title_symbol.innerHTML = elementData[element-1].Symbol
+        title_num.innerHTML = elementData[element-1].AtomicNumber
         title.classList.remove(title.classList[1]?.toString())
         title.classList.remove(title.classList[1]?.toString())
         title.classList.add(elementData[element-1].Category.replace(/ /g,"-"))
         title.classList.add(elementData[element-1].ManMade ? "ManMade" : "Natural")
         ModalContent.querySelector(".basic-info").innerHTML = `
-        ${elementData[element-1].Symbol} <br><br>
         -- Origin of Name -- <br>
         ${elementData[element-1].OriginName} <br><br>
         -- Description -- <br>

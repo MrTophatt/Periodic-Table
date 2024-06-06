@@ -27,13 +27,32 @@
     color: white;
     text-align: center;
     padding-block-start: 0.83em;
-    padding-block-end: 0.83em;
+    padding-block-end: 1.7em;
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
-.Title-name {
+.Title-name, .Title-num, .Title-symbol {
     padding: 0;
     margin: 0;
+}
+.Title-num, .Title-symbol {
+    font-size: 20px;
+    display: flex;
+    flex-basis: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.Title-num {
+    justify-content: flex-start;
+}
+.Title-symbol {
+    justify-content: flex-end;
+}
+.navbar-left, .navbar-right, .navbar-title {
+    flex-basis: 100%;
+}
+.Title-top {
+    display: flex;
 }
 .basic-info {
     color: white;
