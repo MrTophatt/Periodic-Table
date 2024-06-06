@@ -13,7 +13,6 @@
 }
 .modal-content {
     background-color: gray;
-    padding: 20px;
     border-radius: 10px;
     width: 40%;
     display: flex;
@@ -24,9 +23,17 @@
     overflow: hidden;
     position: relative;
 }
-.Title {
+.Title, .Title-name {
     color: white;
     text-align: center;
+    padding-block-start: 0.83em;
+    padding-block-end: 0.83em;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.Title-name {
+    padding: 0;
+    margin: 0;
 }
 .basic-info {
     color: white;

@@ -17,11 +17,21 @@ function showModal(element) {
         ClickedElement(elements)
 
     } else {
-        ModalContent.querySelector(".Title").style.display = 'block'
+        const title = ModalContent.querySelector(".Title")
+        const title_name = ModalContent.querySelector(".Title-name")
+        const title_num = ModalContent.querySelector(".Title-num")
+        const title_symbol = ModalContent.querySelector(".Title-symbol")
         document.querySelector(".left-arrow").style.display = ''
         document.querySelector(".right-arrow").style.display = ''
         ModalContent.querySelector("#searchInput").style.display = 'none'
-        ModalContent.querySelector(".Title").innerHTML = elementData[element-1].Name
+        title.style.display = 'block'
+        console.log(title)
+        title_name.innerHTML = elementData[element-1].Name
+        title_num_symbol.innerHTML = elementData[element-1].Symbol
+        title.classList.remove(title.classList[1]?.toString())
+        title.classList.remove(title.classList[1]?.toString())
+        title.classList.add(elementData[element-1].Category.replace(/ /g,"-"))
+        title.classList.add(elementData[element-1].ManMade ? "ManMade" : "Natural")
         ModalContent.querySelector(".basic-info").innerHTML = `
         ${elementData[element-1].Symbol} <br><br>
         -- Origin of Name -- <br>
