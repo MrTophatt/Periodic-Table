@@ -9,6 +9,7 @@ function showModal(element) {
         document.querySelector(".left-arrow").style.display = 'none'
         document.querySelector(".right-arrow").style.display = 'none'
         modal.querySelector("#searchInput").style.display = 'block'
+        modal.querySelector(".search-container").style.marginBottom = '20px'
         modal.querySelector("#searchInput").value = ""
         const element_block = ModalContent.querySelector(".basic-info")
 
@@ -21,9 +22,26 @@ function showModal(element) {
         const title_name = ModalContent.querySelector(".Title-name")
         const title_num = ModalContent.querySelector(".Title-num")
         const title_symbol = ModalContent.querySelector(".Title-symbol")
-        document.querySelector(".left-arrow").style.display = ''
-        document.querySelector(".right-arrow").style.display = ''
+        const left_arrow = ModalContent.querySelector(".left-arrow")
+        const right_arrow = ModalContent.querySelector(".right-arrow")
+
+        left_arrow.style.display = ''
+        right_arrow.style.display = ''
+
+        left_arrow.classList.remove(left_arrow.classList[2]?.toString())
+        left_arrow.classList.remove(left_arrow.classList[2]?.toString())
+        left_arrow.innerHTML = elementData[element-2]? elementData[element-2].Name : elementData[117].Name
+        left_arrow.classList.add(elementData[element-2]? elementData[element-2].Category.replace(/ /g,"-") : elementData[117].Category.replace(/ /g,"-"))
+        left_arrow.classList.add(elementData[element-2]? (elementData[element-2].ManMade ? "ManMade" : "Natural") : (elementData[117].ManMade ? "ManMade" : "Natural"))
+
+        right_arrow.classList.remove(right_arrow.classList[2]?.toString())
+        right_arrow.classList.remove(right_arrow.classList[2]?.toString())
+        right_arrow.innerHTML = elementData[element]? elementData[element].Name : elementData[0].Name
+        right_arrow.classList.add(elementData[element]? elementData[element].Category.replace(/ /g,"-") : elementData[0].Category.replace(/ /g,"-"))
+        right_arrow.classList.add(elementData[element]? (elementData[element].ManMade ? "ManMade" : "Natural") : (elementData[0].ManMade ? "ManMade" : "Natural"))
+
         ModalContent.querySelector("#searchInput").style.display = 'none'
+        modal.querySelector(".search-container").style.marginBottom = '0'
         title.style.display = 'block'
         console.log(title)
         title_name.innerHTML = elementData[element-1].Name

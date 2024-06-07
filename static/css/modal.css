@@ -31,28 +31,38 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
-.Title-name, .Title-num, .Title-symbol {
+.footer {
+    text-align: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.Title-name, .Title-num, .Title-symbol, .arrow {
     padding: 0;
     margin: 0;
 }
-.Title-num, .Title-symbol {
+.Title-num, .Title-symbol, .arrow {
     font-size: 20px;
     display: flex;
     flex-basis: 100%;
     padding-left: 1em;
     padding-right: 1em;
 }
-.Title-num {
+.Title-num, .left-arrow {
     justify-content: flex-start;
 }
-.Title-symbol {
+.Title-symbol, .right-arrow {
     justify-content: flex-end;
 }
-.navbar-left, .navbar-right, .navbar-title {
-    flex-basis: 100%;
-}
-.Title-top {
+.Title-top, .footer {
     display: flex;
+}
+.right-arrow:hover, .left-arrow:hover {
+    cursor: pointer;
+}
+.right-arrow, .left-arrow {
+    padding-block-start: 0.83em;
+    padding-block-end: 0.83em;
+    color: white;
 }
 .basic-info {
     color: white;
@@ -69,7 +79,7 @@
 }
 .search-container {
     overflow-y:auto;
-    padding-right:20px;
+    padding: 5px 20px 0;
     height: 100%;
 }
 
