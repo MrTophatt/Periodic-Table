@@ -13,7 +13,7 @@ function showModal(element) {
         modal.querySelector("#searchInput").value = ""
         const element_block = ModalContent.querySelector(".basic-info")
 
-        element_block.innerHTML = GenerateElementList([], []) // Filter
+        element_block.innerHTML = GenerateElementList([], [], null) // Filter
         let elements = element_block.querySelectorAll(".element")
         ClickedElement(elements)
 
