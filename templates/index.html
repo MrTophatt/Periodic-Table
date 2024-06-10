@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/css/table.css">
     <link rel="stylesheet" href="../static/css/element.css">
     <link rel="stylesheet" href="../static/css/modal.css">
+    <link rel="stylesheet" href="../static/css/legend.css">
     <link rel="icon" type="image/png" href="../static/media/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,37 @@
             </div>
         </div>
     </nav>
+
     <div id="wrapper">
+        <div class="legend">
+            <div class="legend-border">
+                <div class="legend-text legend-stateOfMatter">
+                    <span class="legend-stateOfMatter-text">
+                        State of matter at <br>
+                        room temp (20 - 25°C)
+                    </span>
+                    <span style="color:white;" class="stateOfMatter">Solid</span>   
+                    <span style="color:red;" class="stateOfMatter">Gas</span>
+                    <span style="color:blue;" class="stateOfMatter">Liquid</span>
+                </div>
+            </div>
+            <div class="legend-border">
+                <div class="legend-text legend-categories">
+                    <span class="legend-categories-text">Element Categories</span>
+                    <span class="category" style="background-color: #284168;">Nonmetal</span>
+                    <span class="category" style="background-color: #643a45;">Noble Gas</span>
+                    <span class="category" style="background-color: #1d4d55;">Alkali Metal</span>
+                    <span class="category" style="background-color: #632e3a;">Alkali Earth Metal</span>
+                    <span class="category" style="background-color: #4d4317;">Metalloid</span>
+                    <span class="category" style="background-color: #2c4e46;">Post Transition Metal</span>
+                    <span class="category" style="background-color: #453d65;">Transition Metal</span>
+                    <span class="category" style="background-color: #004f7e;">Lanthanide</span>
+                    <span class="category" style="background-color: #603b28;">Actinide</span>
+                    <span class="category" style="background-color: #45474c;">Unknown</span>
+                    <span class="category" style="background-color: #363636; background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .3) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .3) 75%, transparent 75%, transparent);">Synthetic</span>
+                </div>
+            </div>
+        </div>
         <div class="table-1"></div>
     </div>
     <div id="myModal" class="modal">
