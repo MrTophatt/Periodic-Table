@@ -28,6 +28,7 @@ window.onload = function(){
                     `
                     curr.classList.add(elementData[idx].Category.replace(/ /g,"-"))
                     curr.classList.add(elementData[idx].ManMade ? "ManMade" : "Natural")
+                    curr.classList.add(elementData[idx].Diatomic ? "Diatomic" : "Monatomic")
                 }
             }
 
@@ -40,7 +41,7 @@ window.onload = function(){
             function PreloadSearchMap() {
                 const elementMap = elementData.map((x, i) => {
                     return`
-                    <div class="element ${elementData[i].Category.replace(/ /g,"-")} block-${elementData[i].Block} ${elementData[i].ManMade ? "ManMade" : "Natural"}">
+                    <div class="element ${elementData[i].Category.replace(/ /g,"-")} block-${elementData[i].Block} ${elementData[i].ManMade ? "ManMade" : "Natural"} ${elementData[i].Diatomic ? "Diatomic" : "Monatomic"}">
                         <span class='atomic_number'>${i+1}</span>
                         <span class='${elementData[i].StateOfMatter} symbol'>${elementData[i].Symbol}<br></span>
                         <span class='name'>${elementData[i].Name}</span>

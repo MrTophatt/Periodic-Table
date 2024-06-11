@@ -160,6 +160,16 @@ man_made_atomic_numbers = [
     118  # Organesson
 ]
 
+diatomic = [
+    1, # Hydrogen
+    7, # Nitrogen
+    8, # Oxygen
+    9, # Fluorine
+    17, # Chlorine
+    35, # Bromine
+    53, # Iodine
+]
+
 liquids = [35, 80]
 gasses = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86]
 
@@ -189,6 +199,7 @@ for i in range(118):
             "Year": el.discovery_year
         },
         "ManMade": True if i+1 in man_made_atomic_numbers else False,
+        "Diatomic": True if i+1 in diatomic else False,
         "Sources": el.sources
     })
 
