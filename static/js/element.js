@@ -14,12 +14,13 @@ class Elements {
         }
     }
 
-    filter(stateOfMatter=[], category=[], manmade=null) {
+    filter(stateOfMatter=[], category=[], manmade=null, diatomic=null) {
         let temp = this.data.filter(element => {
             console.log(element.ManMade)
             return (stateOfMatter.length!=0 ? stateOfMatter.includes(element.StateOfMatter) : true) && 
             (category.length!=0 ? category.includes(element.Category) : true) && 
-            (manmade===null || element.ManMade == manmade ? true : false)
+            (manmade===null || element.ManMade == manmade ? true : false) &&
+            (diatomic===null || element.Diatomic == diatomic ? true : false)
         }) 
         return temp
     }
