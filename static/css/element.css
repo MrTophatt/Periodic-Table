@@ -26,6 +26,13 @@
     max-height: 45px;
 }
 
+.highlight {
+    width: 74px;
+    height: 74px;
+    border: 1px solid yellow;
+    margin: 0;
+}
+
 .symbol {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
