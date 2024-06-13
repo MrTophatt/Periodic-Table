@@ -13,11 +13,13 @@ legend.forEach(legendFilter => {
         }
 
         elements.forEach(x => x.classList.remove("highlight"));
+        legend.forEach(x => x.classList.remove("highlight"));
 
         if (activeFilter) {
             elements.forEach(x => {
                 if (x.className.split(" ").includes(activeFilter) || x.children[1]?.classList[0].includes(activeFilter)) {
                     x.classList.add("highlight");
+                    legendFilter.classList.add("highlight")
                 }
             });
         }
