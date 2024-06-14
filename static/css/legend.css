@@ -22,6 +22,7 @@
 .legend-categories-text:first-child {
     grid-column: 1 / 4
 }
+
 .stateOfMatter {
     width: 4em;
     height: 36px;
@@ -36,6 +37,7 @@
     flex-direction: column;
     font-size: 15px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 .category {
     width: 8.6em;
@@ -49,6 +51,7 @@
     text-align: center;
     flex-direction: column;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 .category:hover, .stateOfMatter:hover {
     transition: 0.3s;

@@ -91,7 +91,7 @@ element_categories = [
     "Post-transition Metal",  # Thallium
     "Post-transition Metal",  # Lead
     "Post-transition Metal",  # Bismuth
-    "Post-transition Metal",  # Polonium
+    "Metalloid",  # Polonium
     "Metalloid",  # Astatine
     "Noble Gas",  # Radon
     "Alkali Metal",  # Francium
