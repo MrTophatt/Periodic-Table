@@ -88,6 +88,8 @@
     margin-bottom: 1em;
     background-color: white;
     border-radius: 3px;
+    color: black;
+    display: flex;
 }
 
 .arrow {
