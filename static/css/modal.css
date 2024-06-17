@@ -92,6 +92,15 @@
     display: flex;
 }
 
+.element-extraInfo {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 12em);
+    grid-column-gap: 5px;
+    align-items: center;
+    padding-left: 10px;
+}
+
 .arrow {
     align-items: center;
     font-weight:bolder;

@@ -60,36 +60,37 @@
     margin-bottom: 5px;
 }
 
-.Alkali-Metal {
+.Alkali-Metals {
     background-color: #1d4d55
 }
-.Alkaline-Earth-Metal {
+.Alkaline-Earth-Metals {
     background-color: #632e3a
 }
-.Transition-Metal {
+.Transition-Metals {
     background-color: #453d65
 }
-.Post-transition-Metal {
+.Poor-Metals {
     background-color: #2c4e46
 }
-.Metalloid {
+.Metalloids {
     background-color: #4d4317
 }
-.Nonmetal {
+.Nonmetals {
     background-color: #284168;
 }
-.Noble-Gas {
+.Noble-Gases {
     background-color: #643a45
 }
-.Lanthanide {
+.Lanthanides {
     background-color: #004f7e;
 }
-.Actinide {
+.Actinides {
     background-color: #603b28;
 }
-.Unknown {
-    background-color: #45474c;
+.Halogens {
+    background-color: #6d6c27;
 }
+
 .ManMade {
     background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .3) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .3) 75%, transparent 75%, transparent);
 }

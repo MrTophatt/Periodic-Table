@@ -7,127 +7,6 @@ ferricyanide = Substance.from_formula('Fe(NO3)2')
 print([dict(_) for _ in balance_stoichiometry({'C', 'O2'}, {'CO2', 'CO'}, underdetermined=None)])
 print(ferricyanide.unicode_name)
 
-element_categories = [
-    "Nonmetal",  # Hydrogen
-    "Noble Gas",  # Helium
-    "Alkali Metal",  # Lithium
-    "Alkaline Earth Metal",  # Beryllium
-    "Metalloid",  # Boron
-    "Nonmetal",  # Carbon
-    "Nonmetal",  # Nitrogen
-    "Nonmetal",  # Oxygen
-    "Nonmetal",  # Fluorine
-    "Noble Gas",  # Neon
-    "Alkali Metal",  # Sodium
-    "Alkaline Earth Metal",  # Magnesium
-    "Post-transition Metal",  # Aluminum
-    "Metalloid",  # Silicon
-    "Nonmetal",  # Phosphorus
-    "Nonmetal",  # Sulfur
-    "Nonmetal",  # Chlorine
-    "Noble Gas",  # Argon
-    "Alkali Metal",  # Potassium
-    "Alkaline Earth Metal",  # Calcium
-    "Transition Metal",  # Scandium
-    "Transition Metal",  # Titanium
-    "Transition Metal",  # Vanadium
-    "Transition Metal",  # Chromium
-    "Transition Metal",  # Manganese
-    "Transition Metal",  # Iron
-    "Transition Metal",  # Cobalt
-    "Transition Metal",  # Nickel
-    "Transition Metal",  # Copper
-    "Transition Metal",  # Zinc
-    "Post-transition Metal",  # Gallium
-    "Metalloid",  # Germanium
-    "Metalloid",  # Arsenic
-    "Nonmetal",  # Selenium
-    "Nonmetal",  # Bromine
-    "Noble Gas",  # Krypton
-    "Alkali Metal",  # Rubidium
-    "Alkaline Earth Metal",  # Strontium
-    "Transition Metal",  # Yttrium
-    "Transition Metal",  # Zirconium
-    "Transition Metal",  # Niobium
-    "Transition Metal",  # Molybdenum
-    "Transition Metal",  # Technetium
-    "Transition Metal",  # Ruthenium
-    "Transition Metal",  # Rhodium
-    "Transition Metal",  # Palladium
-    "Transition Metal",  # Silver
-    "Transition Metal",  # Cadmium
-    "Post-transition Metal",  # Indium
-    "Post-transition Metal",  # Tin
-    "Metalloid",  # Antimony
-    "Metalloid",  # Tellurium
-    "Nonmetal",  # Iodine
-    "Noble Gas",  # Xenon
-    "Alkali Metal",  # Cesium
-    "Alkaline Earth Metal",  # Barium
-    "Lanthanide",  # Lanthanum
-    "Lanthanide",  # Cerium
-    "Lanthanide",  # Praseodymium
-    "Lanthanide",  # Neodymium
-    "Lanthanide",  # Promethium
-    "Lanthanide",  # Samarium
-    "Lanthanide",  # Europium
-    "Lanthanide",  # Gadolinium
-    "Lanthanide",  # Terbium
-    "Lanthanide",  # Dysprosium
-    "Lanthanide",  # Holmium
-    "Lanthanide",  # Erbium
-    "Lanthanide",  # Thulium
-    "Lanthanide",  # Ytterbium
-    "Lanthanide",  # Lutetium
-    "Transition Metal",  # Hafnium
-    "Transition Metal",  # Tantalum
-    "Transition Metal",  # Tungsten
-    "Transition Metal",  # Rhenium
-    "Transition Metal",  # Osmium
-    "Transition Metal",  # Iridium
-    "Transition Metal",  # Platinum
-    "Transition Metal",  # Gold
-    "Transition Metal",  # Mercury
-    "Post-transition Metal",  # Thallium
-    "Post-transition Metal",  # Lead
-    "Post-transition Metal",  # Bismuth
-    "Metalloid",  # Polonium
-    "Metalloid",  # Astatine
-    "Noble Gas",  # Radon
-    "Alkali Metal",  # Francium
-    "Alkaline Earth Metal",  # Radium
-    "Actinide",  # Actinium
-    "Actinide",  # Thorium
-    "Actinide",  # Protactinium
-    "Actinide",  # Uranium
-    "Actinide",  # Neptunium
-    "Actinide",  # Plutonium
-    "Actinide",  # Americium
-    "Actinide",  # Curium
-    "Actinide",  # Berkelium
-    "Actinide",  # Californium
-    "Actinide",  # Einsteinium
-    "Actinide",  # Fermium
-    "Actinide",  # Mendelevium
-    "Actinide",  # Nobelium
-    "Actinide",  # Lawrencium
-    "Transition Metal",  # Rutherfordium
-    "Transition Metal",  # Dubnium
-    "Transition Metal",  # Seaborgium
-    "Transition Metal",  # Bohrium
-    "Transition Metal",  # Hassium
-    "Unknown",  # Meitnerium
-    "Unknown",  # Darmstadtium
-    "Unknown",  # Roentgenium
-    "Unknown",  # Copernicium
-    "Unknown",  # Nihonium
-    "Unknown",  # Flerovium
-    "Unknown",  # Moscovium
-    "Unknown",  # Livermorium
-    "Unknown",  # Tennessine
-    "Unknown",  # Oganesson
-]
-
 man_made_atomic_numbers = [
     43,  # Technetium
     61,  # Promethium
@@ -176,6 +55,7 @@ gasses = [1, 2, 7, 8, 9, 10, 17, 18, 36, 54, 86]
 elements = []
 for i in range(118):
     el = element(i+1)
+    print(i+1, str(el._series))
     if i+1 in liquids:
         state = "Liquid"
     elif i+1 in gasses:
@@ -188,8 +68,9 @@ for i in range(118):
         "AtomicNumber": el.atomic_number,
         "Symbol": el.symbol,
         "StateOfMatter": state,
-        "Mass": el.atomic_weight,
-        "Category": element_categories[i],
+        "Mass": round(el.atomic_weight, 3),
+        "Density": round(el.density, 3),
+        "Category": el.series.title(),
         "Block": el.block,
         "Description": el.description,
         "Uses": el.uses,
@@ -197,6 +78,23 @@ for i in range(118):
             "People": el.discoverers,
             "Location": el.discovery_location,
             "Year": el.discovery_year
+        },
+        "ElectroNegativity": {
+            "Allen": el.en_allen,
+            "Ghosh": el.en_ghosh,
+            "Pauling": el.en_pauling
+        },
+        "PhaseTransition": {
+            "Tm": {
+                "Kelvin": ("" if isinstance(el.melting_point, dict) else round(el.melting_point, 3)) if not i+1 == 2 else 0.95,
+                "Celsius": ("" if isinstance(el.melting_point, dict) else (round(el.melting_point, 3)-273.15)) if not i+1 == 2 else -272.2,
+                "Fahrenheit": ("" if isinstance(el.melting_point, dict) else ((round(el.melting_point, 3)-273.15)*(9/5)+32)) if not i+1 == 2 else -457.96,
+            },
+            "Tb": {
+                "Kelvin": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else round(el.boiling_point, 3)),
+                "Celsius": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else (round(el.boiling_point, 3)-273.15)),
+                "Fahrenheit": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else ((round(el.boiling_point, 3)-273.15)*(9/5)+32)),
+            },
         },
         "ManMade": True if i+1 in man_made_atomic_numbers else False,
         "Diatomic": True if i+1 in diatomic else False,

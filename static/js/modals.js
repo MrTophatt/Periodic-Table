@@ -89,8 +89,10 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
                 <span class='name'>${x.Name}</span>
             </div>
             <div class="element-extraInfo">
-                <span class='atomic_number'>Mass: ${x.Mass}</span>
-                <span class='atomic_number'>Block-${x.Block}</span>
+                <span class='atomic_mass'>Atomic Mass: ${x.Mass}</span>
+                <span class='density'>Density: ${x.Density}</span>
+                <span class='melting-point'>${x.PhaseTransition.Tm.Kelvin}</span>
+                <span class='boiling-point'></span>
             </div>
         </div>
         `
