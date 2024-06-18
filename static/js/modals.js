@@ -92,7 +92,7 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
                 <span class='atomic_mass'>Atomic Mass: ${x.Mass}</span>
                 <span class='density'>Density: ${x.Density}</span>
                 <span class='melting-point'>${x.PhaseTransition.Tm.Kelvin}</span>
-                <span class='boiling-point'></span>
+                <span class='boiling-point'>${x.PhaseTransition.Tb.Kelvin}</span>
             </div>
         </div>
         `

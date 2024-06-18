@@ -86,14 +86,14 @@ for i in range(118):
         },
         "PhaseTransition": {
             "Tm": {
-                "Kelvin": ("" if isinstance(el.melting_point, dict) else round(el.melting_point, 3)) if not i+1 == 2 else 0.95,
-                "Celsius": ("" if isinstance(el.melting_point, dict) else (round(el.melting_point, 3)-273.15)) if not i+1 == 2 else -272.2,
-                "Fahrenheit": ("" if isinstance(el.melting_point, dict) else ((round(el.melting_point, 3)-273.15)*(9/5)+32)) if not i+1 == 2 else -457.96,
+                "Kelvin": str(("" if isinstance(el.melting_point, dict) else round(el.melting_point, 3)) if not i+1 == 2 else 0.95) + " K",
+                "Celsius": str(("" if isinstance(el.melting_point, dict) else (round(el.melting_point, 3)-273.15)) if not i+1 == 2 else -272.2) + "°C",
+                "Fahrenheit": str(("" if isinstance(el.melting_point, dict) else ((round(el.melting_point, 3)-273.15)*(9/5)+32)) if not i+1 == 2 else -457.96) + "°F",
             },
             "Tb": {
-                "Kelvin": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else round(el.boiling_point, 3)),
-                "Celsius": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else (round(el.boiling_point, 3)-273.15)),
-                "Fahrenheit": ("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else ((round(el.boiling_point, 3)-273.15)*(9/5)+32)),
+                "Kelvin": str("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else round(el.boiling_point, 3)) + " K",
+                "Celsius": str("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else (round(el.boiling_point, 3)-273.15)) + "°C",
+                "Fahrenheit": str("" if (isinstance(el.boiling_point, dict) or el.boiling_point is None) else ((round(el.boiling_point, 3)-273.15)*(9/5)+32)) + "°F",
             },
         },
         "ManMade": True if i+1 in man_made_atomic_numbers else False,
