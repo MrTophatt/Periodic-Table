@@ -5,12 +5,14 @@ function showModal(element) {
     modal.style.display = "flex";
 
     if(element=="search"){
+        ModalContent.style.width = '25%'
         ModalContent.querySelector(".Title").style.display = 'none'
         document.querySelector(".left-arrow").style.display = 'none'
         document.querySelector(".right-arrow").style.display = 'none'
         modal.querySelector("#searchInput").style.display = 'block'
         modal.querySelector(".search-container").style.marginBottom = '20px'
         modal.querySelector("#searchInput").value = ""
+
         const element_block = ModalContent.querySelector(".basic-info")
 
         element_block.innerHTML = GenerateElementList([], [], null, null) // Filter
@@ -20,6 +22,7 @@ function showModal(element) {
 
     } else {
         element--;
+        ModalContent.style.width = '30%'
         const title = ModalContent.querySelector(".Title")
         const title_name = ModalContent.querySelector(".Title-name")
         const title_num = ModalContent.querySelector(".Title-num")

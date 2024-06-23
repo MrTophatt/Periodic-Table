@@ -7,10 +7,10 @@ window.addEventListener("click", function(event) {
 
 document.getElementById('searchInput').addEventListener('input', function (event) {
     const searchTerm = event.target.value.toLowerCase();
-    const listItems=document.querySelector(".modal-content").querySelectorAll('.element')
+    const elementList = document.querySelector(".modal-content").querySelectorAll('.element-search')
     
-    listItems.forEach(function (item) {
-        const itemText = item.textContent.toLowerCase();
+    elementList.forEach(function (item) {
+        const itemText = item.children[0].textContent.toLowerCase();
 
         if (itemText.includes(searchTerm)) {
             item.style.display = 'flex';
