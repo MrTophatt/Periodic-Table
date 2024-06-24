@@ -87,18 +87,18 @@ sliders.forEach((x, i) => {
     setToggleAccessible(toSlider[i]);
     fromSlider[i].oninput = () => {
         controlFromSlider(fromSlider[i], toSlider[i], fromInput[i])
-        element_block.innerHTML = GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
+        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
     toSlider[i].oninput = () => {
         controlToSlider(fromSlider[i], toSlider[i], toInput[i])
-        element_block.innerHTML = GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
+        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
     fromInput[i].oninput = () => {
         controlFromInput(fromSlider[i], fromInput[i], toInput[i], toSlider[i])
-        element_block.innerHTML = GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
+        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
     toInput[i].oninput = () => {
         controlToInput(toSlider[i], fromInput[i], toInput[i], toSlider[i])
-        element_block.innerHTML = GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
+        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
 })

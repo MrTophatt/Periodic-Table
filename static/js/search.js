@@ -5,8 +5,12 @@ window.addEventListener("click", function(event) {
     }
 });
 
-document.getElementById('searchInput').addEventListener('input', function (event) {
-    const searchTerm = event.target.value.toLowerCase();
+document.getElementById('searchInput').addEventListener('input', function () {
+    SearchFilter()
+});
+
+function SearchFilter() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     const elementList = document.querySelector(".modal-content").querySelectorAll('.element-search')
     
     elementList.forEach(function (item) {
@@ -18,4 +22,4 @@ document.getElementById('searchInput').addEventListener('input', function (event
             item.style.display = 'none';
         }
     });
-});
+}

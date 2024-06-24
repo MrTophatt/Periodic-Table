@@ -17,7 +17,7 @@ function showModal(element) {
         const element_block = ModalContent.querySelector(".basic-info")
         const fromSlider = document.querySelectorAll('#fromSlider');
         const toSlider = document.querySelectorAll('#toSlider');
-        element_block.innerHTML = GenerateElementList() //Load up default
+        GenerateElementList() //Load up default
 
         let elements = element_block.querySelectorAll(".element")
         ClickedElement(elements)
@@ -85,7 +85,7 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
     const El = window.exports["El"]
 
     const Filtered = El.filter(stateOfMatter, category, manmade, diatomic, massRange, densityRange)
-    return Filtered.map((x) => {
+    element_block.innerHTML = Filtered.map((x) => {
         return`
         <div class="element-search">
             <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"} ${x.Diatomic ? "Diatomic" : "Monatomic"}" style="margin:0; left:-1px; position: relative;">
@@ -102,6 +102,7 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
         </div>
         `
     }).toString().replaceAll(',','');
+    SearchFilter()
 }
 
 function hideModal() {
