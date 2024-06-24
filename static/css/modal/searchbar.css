@@ -1,0 +1,14 @@
+.modal-content input[type=text] {
+    padding: 6px;
+    margin: 5px;
+    margin-bottom: 20px;
+    width: calc(100% - 10px);
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #f9f9f9;
+    font-size: 17px;
+}
+.modal-content input[type=text]::placeholder {
+    color: #bbb;
+}

@@ -62,7 +62,6 @@ function ClickedElement(elements) {
     elements.forEach(element => {
         element.onclick = function(){
             currElementNumber = parseInt(element.querySelector(".atomic_number").innerHTML)
-            console.log(currElementNumber)
             showModal(currElementNumber)
         }
     });

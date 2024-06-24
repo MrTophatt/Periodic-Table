@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/table.css">
     <link rel="stylesheet" href="../static/css/element.css">
-    <link rel="stylesheet" href="../static/css/modal.css">
+    <link rel="stylesheet" href="../static/css/modal/title.css">
+    <link rel="stylesheet" href="../static/css/modal/searchbar.css">
+    <link rel="stylesheet" href="../static/css/modal/filter.css">
+    <link rel="stylesheet" href="../static/css/modal/sliders.css">
+    <link rel="stylesheet" href="../static/css/modal/body.css">
+    <link rel="stylesheet" href="../static/css/modal/scrollbar.css">
+    <link rel="stylesheet" href="../static/css/modal/arrows.css">
     <link rel="stylesheet" href="../static/css/legend.css">
     <link rel="icon" type="image/png" href="../static/media/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,6 +79,43 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <input id="searchInput" type="text" placeholder="Search Element...">
+
+            <div class="filters">
+                <div class="range_container">
+                    <div class="sliders_control">
+                        <input id="fromSlider" type="range" value="0" min="0" max="300"/>
+                        <input id="toSlider" type="range" value="300" min="0" max="300"/>
+                    </div>
+                    <div class="form_control">
+                        <div class="form_control_container">
+                            <div class="form_control_container__time">Min</div>
+                            <input class="form_control_container__time__input" type="number" id="fromInput" value="0" min="0" max="300"/>
+                        </div>
+                        <div class="form_control_container">
+                            <div class="form_control_container__time">Max</div>
+                            <input class="form_control_container__time__input" type="number" id="toInput" value="300" min="0" max="300"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="range_container">
+                    <div class="sliders_control">
+                        <input id="fromSlider" type="range" value="0" min="0" max="23"/>
+                        <input id="toSlider" type="range" value="23" min="0" max="23"/>
+                    </div>
+                    <div class="form_control">
+                        <div class="form_control_container">
+                            <div class="form_control_container__time">Min</div>
+                            <input class="form_control_container__time__input" type="number" id="fromInput" value="0" min="0" max="23"/>
+                        </div>
+                        <div class="form_control_container">
+                            <div class="form_control_container__time">Max</div>
+                            <input class="form_control_container__time__input" type="number" id="toInput" value="23" min="0" max="23"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="Title">
                 <div class="Title-top">
                     <h1 class="Title-num"></h1>
@@ -95,6 +138,7 @@
     </div>
     <script type="text/javascript" src="../static/js/index.js"></script>
     <script type="text/javascript" src="../static/js/search.js"></script>
+    <script type="text/javascript" src="../static/js/sliders.js"></script>
     <script type="text/javascript" src="../static/js/arrows.js"></script>
     <script type="text/javascript" src="../static/js/modals.js"></script>
     <script type="text/javascript" src="../static/js/element.js"></script>

@@ -6,6 +6,7 @@ function showModal(element) {
 
     if(element=="search"){
         ModalContent.style.width = '25%'
+        ModalContent.querySelector(".filters").style.display = 'flex'
         ModalContent.querySelector(".Title").style.display = 'none'
         document.querySelector(".left-arrow").style.display = 'none'
         document.querySelector(".right-arrow").style.display = 'none'
@@ -14,15 +15,16 @@ function showModal(element) {
         modal.querySelector("#searchInput").value = ""
 
         const element_block = ModalContent.querySelector(".basic-info")
+        const fromSlider = document.querySelectorAll('#fromSlider');
+        const toSlider = document.querySelectorAll('#toSlider');
+        element_block.innerHTML = GenerateElementList() //Load up default
 
-        element_block.innerHTML = GenerateElementList([], [], null, null) // Filter
         let elements = element_block.querySelectorAll(".element")
         ClickedElement(elements)
-        console.log(document.querySelectorAll(".element-search"))
-
     } else {
         element--;
         ModalContent.style.width = '30%'
+         ModalContent.querySelector(".filters").style.display = 'none'
         const title = ModalContent.querySelector(".Title")
         const title_name = ModalContent.querySelector(".Title-name")
         const title_num = ModalContent.querySelector(".Title-num")
@@ -79,10 +81,10 @@ function showModal(element) {
     }
 }
 
-function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatomic=null) {
+function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatomic=null, massRange=[fromSlider[0].value, toSlider[0].value], densityRange=[fromSlider[1].value, toSlider[1].value]) {
     const El = window.exports["El"]
 
-    const Filtered = El.filter(stateOfMatter, category, manmade, diatomic)
+    const Filtered = El.filter(stateOfMatter, category, manmade, diatomic, massRange, densityRange)
     return Filtered.map((x) => {
         return`
         <div class="element-search">
@@ -92,8 +94,8 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
                 <span class='name'>${x.Name}</span>
             </div>
             <div class="element-extraInfo">
-                <span class='atomic_mass'>Atomic Mass: ${x.Mass}</span>
-                <span class='density'>Density: ${x.Density} g/m³</span>
+                <span class='atomic_mass'>Atomic Mass: ${x.Mass.toFixed(3)}</span>
+                <span class='density'>Density: ${x.Density.toFixed(3)} g/m³</span>
                 <span class='melting-point'>Melting: ${x.PhaseTransition.Tm.Kelvin || "None"}</span>
                 <span class='boiling-point'>Boiling: ${x.PhaseTransition.Tb.Kelvin || "None"}</span>
             </div>

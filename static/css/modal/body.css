@@ -1,0 +1,55 @@
+.modal {
+    display: none;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+.modal-content {
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    height:inherit;
+    overflow: hidden;
+    position: relative;
+}
+.basic-info {
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    overflow-y:auto;
+    padding: 5px 5px 0 21px;
+    height: 100%;
+}
+
+.element-search {
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+    display: flex;
+}
+
+.element-extraInfo {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 10em);
+    grid-column-gap: 5px;
+    align-items: center;
+    padding-left: 10px;
+}

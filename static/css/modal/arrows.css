@@ -1,0 +1,30 @@
+.footer {
+    text-align: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+.right-arrow:hover, .left-arrow:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+.right-arrow, .left-arrow {
+    padding-block-start: 0.83em;
+    padding-block-end: 0.83em;
+    color: white;
+}
+.left-arrow {
+    justify-content: flex-start;
+}
+.right-arrow {
+    justify-content: flex-end;
+}
+.arrow {
+    align-items: center;
+    font-weight:bolder;
+    font-size: 20px;
+    display: flex;
+    flex-basis: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
