@@ -82,6 +82,7 @@
 
             <div class="filters">
                 <div class="range_container">
+                    <label for="sliders_control">Atomic Mass:</label>
                     <div class="sliders_control">
                         <input id="fromSlider" type="range" value="0" min="0" max="300"/>
                         <input id="toSlider" type="range" value="300" min="0" max="300"/>
@@ -99,6 +100,7 @@
                 </div>
 
                 <div class="range_container">
+                    <label for="sliders_control">Density:</label>
                     <div class="sliders_control">
                         <input id="fromSlider" type="range" value="0" min="0" max="23"/>
                         <input id="toSlider" type="range" value="23" min="0" max="23"/>
@@ -113,6 +115,81 @@
                             <input class="form_control_container__time__input" type="number" id="toInput" value="23" min="0" max="23"/>
                         </div>
                     </div>
+                </div>
+
+                <div class="checkbox_container category_checkbox">
+                    <div>
+                        <label for="alkaliMetalsCheckbox" class="Alkali-Metals">Alkali Metal</label>
+                        <input id="alkaliMetalsCheckbox" type="checkbox" value="Alkali Metals">
+                    </div>
+
+                    <div>
+                        <label for="AlkalineEarthMetalsCheckbox" class="Alkaline-Earth-Metals">Alkaline Earth Metal</label>
+                        <input id="AlkalineEarthMetalsCheckbox" type="checkbox" value="Alkaline Earth Metals">
+                    </div>
+
+                    <div>
+                        <label for="TransitionMetalsCheckbox" class="Transition-Metals">Transition Metal</label>
+                        <input id="TransitionMetalsCheckbox" type="checkbox" value="Transition Metals">
+                    </div>
+
+                    <div>
+                        <label for="poorMetalsCheckbox" class="Poor-Metals">Poor Metal</label>
+                        <input id="poorMetalsCheckbox" type="checkbox" value="Poor Metals">
+                    </div>
+
+                    <div>
+                        <label for="metalloidCheckbox" class="Metalloids">Metalloid</label>
+                        <input id="metalloidCheckbox" type="checkbox" value="Metalloids">
+                    </div>
+
+                    <div>
+                        <label for="nonmetalCheckbox" class="Nonmetals">Nonmetal</label>
+                        <input id="nonmetalCheckbox" type="checkbox" value="Nonmetals">
+                    </div>
+
+                    <div>
+                        <label for="halogenCheckbox" class="Halogens">Halogen</label>
+                        <input id="halogenCheckbox" type="checkbox" value="Halogens">
+                    </div>
+
+                    <div>
+                        <label for="nobleGasCheckbox" class="Noble-Gases">Noble Gas</label>
+                        <input id="nobleGasCheckbox" type="checkbox" value="Noble Gases">
+                    </div>
+
+                    <div>
+                        <label for="lanthenideCheckbox" class="Lanthanides">Lanthanide</label>
+                        <input id="lanthenideCheckbox" type="checkbox" value="Lanthanides">
+                    </div>
+
+                    <div>
+                        <label for="actinideCheckbox" class="Actinides">Actinide</label>
+                        <input id="actinideCheckbox" type="checkbox" value="Actinides">
+                    </div>
+                </div>
+
+                <div class="checkbox_container diatomic_checkbox">
+                    <label for="diatomicCheckbox">Diatomic:</label>
+                    <input id="diatomicCheckbox" type="checkbox">
+                    <label for="monatomicCheckbox">Monatomic:</label>
+                    <input id="monatomicCheckbox" type="checkbox">
+                </div>
+
+                <div class="checkbox_container material_checkbox">
+                    <label for="syntheticCheckbox">Synthetic:</label>
+                    <input id="syntheticCheckbox" type="checkbox">
+                    <label for="naturalCheckbox">Natural:</label>
+                    <input id="naturalCheckbox" type="checkbox">
+                </div>
+
+                <div class="checkbox_container state_checkbox">
+                    <label for="solidCheckbox">Solid</label>
+                    <input id="solidCheckbox" type="checkbox" value="solid">
+                    <label for="liquidCheckbox">Liquid</label>
+                    <input id="liquidCheckbox" type="checkbox" value="liquid">
+                    <label for="gasCheckbox">Gas</label>
+                    <input id="gasCheckbox" type="checkbox" value="gas">
                 </div>
             </div>
 
@@ -138,7 +215,7 @@
     </div>
     <script type="text/javascript" src="../static/js/index.js"></script>
     <script type="text/javascript" src="../static/js/search.js"></script>
-    <script type="text/javascript" src="../static/js/sliders.js"></script>
+    <script type="text/javascript" src="../static/js/sliders filters.js"></script>
     <script type="text/javascript" src="../static/js/arrows.js"></script>
     <script type="text/javascript" src="../static/js/modals.js"></script>
     <script type="text/javascript" src="../static/js/element.js"></script>

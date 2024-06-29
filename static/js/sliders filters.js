@@ -78,6 +78,30 @@ const fromSlider = document.querySelectorAll('#fromSlider');
 const toSlider = document.querySelectorAll('#toSlider');
 const fromInput = document.querySelectorAll('#fromInput');
 const toInput = document.querySelectorAll('#toInput');
+
+const category_checkbox = document.querySelector('.category_checkbox').querySelectorAll("input");
+var category_list = []
+category_checkbox.forEach((x, i) => {
+    x.oninput = () => {
+        if(x.checked) {
+            category_list.push(x.value)
+        } else {
+            category_list.pop(x.value)
+        }
+        console.log(category_list)
+    }
+})
+
+const diatomicCheckbox = document.querySelector('#diatomicCheckbox');
+const monatomicCheckbox = document.querySelector('#monatomicCheckbox');
+
+const syntheticCheckbox = document.querySelector('#syntheticCheckbox');
+const naturalCheckbox = document.querySelector('#naturalCheckbox');
+
+const solidCheckbox = document.querySelector('#solidCheckbox');
+const liquidCheckbox = document.querySelector('#liquidCheckbox');
+const gasCheckbox = document.querySelector('#gasCheckbox');
+
 const modal = document.getElementById("myModal");
 const ModalContent = modal.querySelector(".modal-content")
 const element_block = ModalContent.querySelector(".basic-info")
@@ -87,18 +111,29 @@ sliders.forEach((x, i) => {
     setToggleAccessible(toSlider[i]);
     fromSlider[i].oninput = () => {
         controlFromSlider(fromSlider[i], toSlider[i], fromInput[i])
-        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
     toSlider[i].oninput = () => {
         controlToSlider(fromSlider[i], toSlider[i], toInput[i])
-        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
     fromInput[i].oninput = () => {
         controlFromInput(fromSlider[i], fromInput[i], toInput[i], toSlider[i])
-        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
+
     };
     toInput[i].oninput = () => {
         controlToInput(toSlider[i], fromInput[i], toInput[i], toSlider[i])
-        GenerateElementList([], [], null, null, [fromSlider[0].value||0, toSlider[0].value||Infinity], [fromSlider[1].value||0, toSlider[1].value||Infinity]) // Filter
     };
 })
+
+const inputs = document.querySelector(".filters").querySelectorAll("input")
+inputs.forEach(input => {
+    input.addEventListener("input", () => {
+        GenerateElementList(
+            [solidCheckbox.checked ? "Solid" : null, liquidCheckbox.checked ? "Liquid" : null, gasCheckbox.checked ? "Gas" : null].filter(n => n), 
+            category_list, 
+            syntheticCheckbox.checked===naturalCheckbox.checked ? null : syntheticCheckbox.checked, 
+            diatomicCheckbox.checked===monatomicCheckbox.checked ? null : diatomicCheckbox.checked, 
+            [fromSlider[0].value||0, toSlider[0].value||Infinity], 
+            [fromSlider[1].value||0, toSlider[1].value||Infinity]
+        ) // Filter
+    });
+});
