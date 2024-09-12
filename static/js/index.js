@@ -1,10 +1,8 @@
 window.onload = function(){
     fetch('/get_data')
         .then(response => response.json())
-        .then(data => {
-            let elementData = data; // Do something with the retrieved data
+        .then(elementData => {
             const table_1 = document.querySelector(".table-1");
-            let El = new Elements(data)
 
             for (let i = 0; i < 133; i++) { // Generate the table grid
                 let element = document.createElement("div");
@@ -48,7 +46,7 @@ window.onload = function(){
                     </div>
                     `
                 }).toString().replaceAll(',','');
-                window.exports = {elementData, elementMap, El};
+                window.exports = {elementData, elementMap};
             }
             PreloadSearchMap()
         })

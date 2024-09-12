@@ -46,8 +46,8 @@ function controlToSlider(fromSlider, toSlider, toInput) {
 }
 
 function getParsed(currentFrom, currentTo) {
-    const from = parseInt(currentFrom.value, 10);
-    const to = parseInt(currentTo.value, 10);
+    const from = parseFloat(currentFrom.value);
+    const to = parseFloat(currentTo.value);
     return [from, to];
 }
 

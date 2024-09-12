@@ -82,13 +82,12 @@ function showModal(element) {
 }
 
 function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatomic=null, massRange=[fromSlider[0].value, toSlider[0].value], densityRange=[fromSlider[1].value, toSlider[1].value]) {
-    const El = window.exports["El"]
 
-    const Filtered = El.filter(stateOfMatter, category, manmade, diatomic, massRange, densityRange)
+    const Filtered = filterElements({stateOfMatter, category, manmade, diatomic, massRange, densityRange})
     element_block.innerHTML = Filtered.map((x) => {
         return`
         <div class="element-search">
-            <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"} ${x.Diatomic ? "Diatomic" : "Monatomic"}" style="margin:0; left:-1px; position: relative;">
+            <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"} ${x.Diatomic ? "Diatomic" : "Monatomic"}" style="margin:0; margin: -1px;">
                 <span class='atomic_number'>${x.AtomicNumber}</span>
                 <span class='${x.StateOfMatter} symbol'>${x.Symbol}<br></span>
                 <span class='name'>${x.Name}</span>
