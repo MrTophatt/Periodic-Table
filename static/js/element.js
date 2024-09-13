@@ -13,9 +13,7 @@ function filterElements({
     stateOfMatter=[], 
     category=[], 
     manmade=null, 
-    diatomic=null, 
-    massRange=[0, Infinity], 
-    densityRange=[0, Infinity]
+    diatomic=null
 } = {}) {
     const data = window.exports["elementData"]
     return data.filter(element => {
@@ -23,9 +21,7 @@ function filterElements({
             (stateOfMatter.length === 0 || stateOfMatter.includes(element.StateOfMatter)) &&
             (category.length === 0 || category.includes(element.Category)) &&
             (manmade === null || element.ManMade === manmade) &&
-            (diatomic === null || element.Diatomic === diatomic) &&
-            (element.Mass >= massRange[0] && element.Mass <= massRange[1]) &&
-            (element.Density >= densityRange[0] && element.Density <= densityRange[1])
+            (diatomic === null || element.Diatomic === diatomic)
         );
     });
 }

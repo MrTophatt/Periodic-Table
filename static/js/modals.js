@@ -81,9 +81,9 @@ function showModal(element) {
     }
 }
 
-function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatomic=null, massRange=[fromSlider[0].value, toSlider[0].value], densityRange=[fromSlider[1].value, toSlider[1].value]) {
+function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatomic=null) {
 
-    const Filtered = filterElements({stateOfMatter, category, manmade, diatomic, massRange, densityRange})
+    const Filtered = filterElements({stateOfMatter, category, manmade, diatomic})
     element_block.innerHTML = Filtered.map((x) => {
         return`
         <div class="element-search">
