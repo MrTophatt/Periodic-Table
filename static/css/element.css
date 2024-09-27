@@ -1,6 +1,7 @@
 .element {
-    min-width: 72px;
-    height: 72px;
+    width: calc(min(5vw, 72px));  /* Max width 72px, responsive to viewport width */
+    height: calc(min(5vw, 72px)); /* Max height 72px, responsive to viewport width */
+    box-sizing: border-box; 
     margin:1px;
     background: white;
     color: white;
@@ -27,8 +28,6 @@
 }
 
 .highlight {
-    width: 74px;
-    height: 74px;
     border: 1px solid yellow;
     margin: 0;
 }
@@ -36,7 +35,7 @@
 .symbol {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    font-size: 33px;
+    font-size: calc(min(2vw, 30px)); /* Dynamically scale text size, with a max of 10px */
 }
 .Liquid {
     color:dodgerblue;
@@ -47,14 +46,12 @@
 
 .atomic_number {
     font-weight: 400;
-    font-size: 10px;
-    top: 7px;
-    left: 7px;
+    font-size: calc(min(2vw, 10px)); /* Dynamically scale text size, with a max of 10px */
     display: table;
     flex: 0 1;
 }
 .name {
-    font-size: 10px;
+    font-size: calc(min(2vw, 10px)); /* Dynamically scale text size, with a max of 10px */
     margin-bottom: 5px;
 }
 

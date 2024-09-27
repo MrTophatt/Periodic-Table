@@ -18,14 +18,10 @@ body {
 }
 
 .table-1 {
-    grid-template-columns: repeat(18, 1fr);
-    margin-top: 6vh; /* Adjust this value to change the distance */
-    width: auto;
     display: grid;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: auto;
+    grid-template-columns: repeat(18, 1fr); /* 18 columns */
+    grid-template-rows: repeat(10, 1fr);   /* 10 rows */
+    margin: 6vh auto; /* Center the grid horizontally */
 }
 .table-1 > .element:nth-child(2) {
     grid-column-start: 18;

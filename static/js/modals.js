@@ -87,7 +87,7 @@ function GenerateElementList(stateOfMatter=[], category=[], manmade=null, diatom
     element_block.innerHTML = Filtered.map((x) => {
         return`
         <div class="element-search">
-            <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"} ${x.Diatomic ? "Diatomic" : "Monatomic"}" style="margin:0; margin: -1px;">
+            <div class="element ${x.Category.replace(/ /g,"-")} ${x.ManMade ? "ManMade" : "Natural"} ${x.Diatomic ? "Diatomic" : "Monatomic"}" style="height:72px; width:72px; margin: -1px;">
                 <span class='atomic_number'>${x.AtomicNumber}</span>
                 <span class='${x.StateOfMatter} symbol'>${x.Symbol}<br></span>
                 <span class='name'>${x.Name}</span>
